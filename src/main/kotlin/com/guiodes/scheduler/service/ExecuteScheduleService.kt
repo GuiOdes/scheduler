@@ -59,7 +59,7 @@ class ExecuteScheduleService(
                     ExecutedJobEntity(
                         scheduleReference = job.name,
                         status = "SUCCESS",
-                        lastExecutionDate = LocalDateTime.now()
+                        executionDate = LocalDateTime.now()
                     )
                 )
             }.onFailure {
@@ -68,7 +68,7 @@ class ExecuteScheduleService(
                     ExecutedJobEntity(
                         scheduleReference = job.id.toString(),
                         status = "ERROR",
-                        lastExecutionDate = LocalDateTime.now()
+                        executionDate = LocalDateTime.now()
                     )
                 )
             }

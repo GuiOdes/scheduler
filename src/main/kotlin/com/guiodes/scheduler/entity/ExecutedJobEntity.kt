@@ -14,5 +14,5 @@ class ExecutedJobEntity(
     val id: Long? = null,
     val scheduleReference: String,
     val status: String,
-    val lastExecutionDate: LocalDateTime
+    val executionDate: LocalDateTime
 )
