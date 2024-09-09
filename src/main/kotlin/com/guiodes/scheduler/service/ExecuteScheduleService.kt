@@ -57,7 +57,7 @@ class ExecuteScheduleService(
 
                 executedJobService.save(
                     ExecutedJobEntity(
-                        name = job.name,
+                        scheduleReference = job.name,
                         status = "SUCCESS",
                         lastExecutionDate = LocalDateTime.now()
                     )
@@ -66,7 +66,7 @@ class ExecuteScheduleService(
                 println("Error: ${it.message}")
                 executedJobService.save(
                     ExecutedJobEntity(
-                        name = job.name,
+                        scheduleReference = job.id.toString(),
                         status = "ERROR",
                         lastExecutionDate = LocalDateTime.now()
                     )

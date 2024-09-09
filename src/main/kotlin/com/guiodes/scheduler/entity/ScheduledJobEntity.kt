@@ -14,5 +14,6 @@ data class ScheduledJobEntity(
     val id: Long? = null,
     val name: String,
     val cron: String,
-    val nextExecutionAt: LocalDateTime
+    val nextExecutionAt: LocalDateTime,
+    val isActive: Boolean = true
 )

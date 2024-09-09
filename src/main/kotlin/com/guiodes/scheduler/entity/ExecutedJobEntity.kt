@@ -12,7 +12,7 @@ class ExecutedJobEntity(
     @Id
     @GeneratedValue
     val id: Long? = null,
-    val name: String,
+    val scheduleReference: String,
     val status: String,
     val lastExecutionDate: LocalDateTime
 )
