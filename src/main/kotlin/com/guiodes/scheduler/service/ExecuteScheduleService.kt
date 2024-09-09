@@ -64,6 +64,13 @@ class ExecuteScheduleService(
                 )
             }.onFailure {
                 println("Error: ${it.message}")
+                executedJobService.save(
+                    ExecutedJobEntity(
+                        name = job.name,
+                        status = "ERROR",
+                        lastExecutionDate = LocalDateTime.now()
+                    )
+                )
             }
         }
     }
